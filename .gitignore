@@ -1,0 +1,40 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets - NEVER commit these
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+secrets/
+secret.yaml
+*-secret.yaml
+sealed-secrets-private-key.yaml
+
+# Helm
+charts/*/charts/
+charts/*/Chart.lock
+*.tgz
+
+# Kubeconfig
+kubeconfig
+kubeconfig.yaml
+.kube/
+
+# Terraform (if added later)
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+
+# Temp / debug
+*.tmp
+*.log
+debug/
