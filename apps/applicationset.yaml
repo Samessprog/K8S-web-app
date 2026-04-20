@@ -15,10 +15,10 @@ spec:
           elements:
           - env: dev
             namespace: dev
-            values: values-dev.yaml
+            valuesFile: values-dev.yaml
           - env: prod
             namespace: prod
-            values: values-prod.yaml
+            valuesFile: values-prod.yaml
   template:
     metadata:
       name: '{{app}}-{{env}}'
@@ -30,7 +30,7 @@ spec:
         path: 'charts/{{app}}'
         helm:
           valueFiles:
-          - '{{values}}'
+          - '{{valuesFile}}'
       destination:
         server: https://kubernetes.default.svc
         namespace: '{{namespace}}'
