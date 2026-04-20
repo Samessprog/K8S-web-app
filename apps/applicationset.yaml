@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: web-app
+  namespace: argocd
+spec:
+  generators:
+  - matrix:
+      generators:
+      - list:
+          elements:
+          - app: backend
+          - app: frontend
+      - list:
+          elements:
+          - env: dev
+            namespace: dev
+            values: values-dev.yaml
+          - env: prod
+            namespace: prod
+            values: values-prod.yaml
+  template:
+    metadata:
+      name: '{{app}}-{{env}}'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/Samessprog/K8S-web-app
+        targetRevision: HEAD
+        path: 'charts/{{app}}'
+        helm:
+          valueFiles:
+          - '{{values}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: '{{namespace}}'
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
