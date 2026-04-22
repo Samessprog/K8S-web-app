@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "nginx.fullname" . }}-service
+  labels:
+    {{- include "nginx.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+
+  selector:
+    app.kubernetes.io/name: nginx
+  ports:
+    - port: {{ .Values.service.port }}
+      name: http
+      targetPort: {{ .Values.containerPorts.http }}
