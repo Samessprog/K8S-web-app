@@ -9,8 +9,7 @@ spec:
       generators:
       - list:
           elements:
-          - app: backend
-          - app: frontend
+          - app: nginx
       - list:
           elements:
           - env: dev
