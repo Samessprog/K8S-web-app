@@ -10,6 +10,7 @@ spec:
       - list:
           elements:
           - app: nginx
+          - app: frontend
       - list:
           elements:
           - env: dev
