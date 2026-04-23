@@ -8,8 +8,8 @@ autoscaling:
 
 livenessProbe:
   httpGet:
-    path: /health
-    port: 80
+    path: /
+    port: 8080
   initialDelaySeconds: 10
   periodSeconds: 10
   timeoutSeconds: 3
@@ -17,8 +17,8 @@ livenessProbe:
 
 readinessProbe:
   httpGet:
-    path: /health
-    port: 80
+    path: /
+    port: 8080
   initialDelaySeconds: 3
   periodSeconds: 5
   timeoutSeconds: 2
