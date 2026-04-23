@@ -30,14 +30,14 @@ resources:
 
 livenessProbe:
   httpGet:
-    path: /
+    path: /health
     port: 80
   initialDelaySeconds: 10
   periodSeconds: 10
 
 readinessProbe:
   httpGet:
-    path: /
+    path: /health
     port: 80
   initialDelaySeconds: 3
   periodSeconds: 5
