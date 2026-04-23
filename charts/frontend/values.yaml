@@ -45,6 +45,7 @@ securityContext:
 podSecurityContext:
   fsGroup: 101
   runAsGroup: 101
+  runAsUser: 101
 
 containerPorts:
   http: 80
