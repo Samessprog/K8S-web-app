@@ -11,6 +11,7 @@ serviceAccount:
 podSecurityContext:
   fsGroup: 101
   runAsGroup: 101
+  runAsUser: 101
 
 service:
   type: ClusterIP
