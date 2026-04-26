@@ -11,6 +11,7 @@ spec:
           elements:
           - app: nginx
           - app: frontend
+          - app: api-gateway
       - list:
           elements:
           - env: dev

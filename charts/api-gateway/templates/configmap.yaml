@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "api-gateway.fullname" .}}-configmap
+  labels:
+    {{- include "api-gateway.labels" . | nindent 4}}
+data:
+  AUTH_SERVICE_URL: {{ .Values.config.authServiceUrl | quote }}
+  REPORT_SERVICE_URL: {{ .Values.config.reportServiceUrl | quote }}
