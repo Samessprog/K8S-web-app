@@ -12,6 +12,8 @@ spec:
           - app: nginx
           - app: frontend
           - app: api-gateway
+          - app: auth-service
+          - app: report-service
       - list:
           elements:
           - env: dev

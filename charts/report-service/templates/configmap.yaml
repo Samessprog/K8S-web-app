@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "report-service.fullname" . }}-configmap
+  labels:
+    {{- include "report-service.labels" . | nindent 4 }}
+data:
+  DB_URL: {{ .Values.config.dbUrl | quote }}
