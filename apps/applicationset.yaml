@@ -15,6 +15,7 @@ spec:
           - app: auth-service
           - app: report-service
           - app: postgres
+          - app: redis
       - list:
           elements:
           - env: dev
