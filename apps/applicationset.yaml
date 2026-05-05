@@ -14,6 +14,7 @@ spec:
           - app: api-gateway
           - app: auth-service
           - app: report-service
+          - app: postgres
       - list:
           elements:
           - env: dev

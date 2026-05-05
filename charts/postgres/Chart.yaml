@@ -1,0 +1,6 @@
+apiVersion: v2
+name: postgres
+description: postgres chart
+version: 0.1.0
+appVersion: "15"
+
